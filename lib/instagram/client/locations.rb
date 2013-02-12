@@ -15,7 +15,7 @@ module Instagram
       # @see TODO:docs url
       def location(id, *args)
         response = get("locations/#{id}")
-        response["data"]
+        response
       end
 
       # Returns a list of recent media items for a given Instagram location
@@ -52,7 +52,7 @@ module Instagram
       # @rate_limited true
       def location_search(lat, lng, options={})
         response = get('locations/search', options.merge(:lat => lat, :lng => lng))
-        response["data"]
+        response
       end
     end
   end

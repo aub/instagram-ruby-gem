@@ -17,7 +17,7 @@ module Instagram
       # @see TODO:docs url
       def media_comments(id, *args)
         response = get("media/#{id}/comments")
-        response["data"]
+        response
       end
 
       # Creates a comment for a given media item ID
@@ -36,7 +36,7 @@ module Instagram
       # @see TODO:docs url
       def create_media_comment(id, text, options={})
         response = post("media/#{id}/comments", options.merge(:text => text))
-        response["data"]
+        response
       end
 
       # Deletes a comment for a given media item ID
@@ -55,7 +55,7 @@ module Instagram
       # @see TODO:docs url
       def delete_media_comment(media_id, comment_id, options={})
         response = delete("media/#{media_id}/comments/#{comment_id}", options)
-        response["data"]
+        response
       end
     end
   end
